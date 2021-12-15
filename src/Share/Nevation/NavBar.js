@@ -8,24 +8,28 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 const NavBar = () => {
     return (
         <div className='header-section'>
-            <div className="d-flex align-items-center justify-content-around ">
-                <img src={logo} alt="" className='img-fluid' />
-                <div className="search-box">
-                    <button>Search</button>
-                    <input type="text" placeholder='Search your Item' />
-                </div>
-                <h4>My Cart <i class="fas fa-cart-arrow-down icon"></i></h4>
-            </div>
             <div>
                 <Navbar variant="dark" collapseOnSelect expand="lg">
                     <Container>
-                        <Nav className="menu-bar ms-auto">
-                            <NavLink to='/home'>Home</NavLink>
-                            <NavLink to='/blog'>Blog</NavLink>
-                            <NavLink to='/product'>Products</NavLink>
-                            <NavLink to='/contact'>Contact Us</NavLink>
-                            <NavLink to='/about'>About Us</NavLink>
-                        </Nav>
+                        <Navbar.Brand >
+                            <img
+                                src={logo}
+                                width="100"
+                                height="40"
+                                className="d-inline-block align-top"
+                                alt="React Bootstrap logo"
+                            />
+                        </Navbar.Brand>
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <Nav className="menu-bar ms-auto">
+                                <NavLink to='/home'>Home</NavLink>
+                                <NavLink to='/blog'>Blog</NavLink>
+                                <NavLink to='/product'>Products</NavLink>
+                                <NavLink to='/contact'>Contact Us</NavLink>
+                                <NavLink to='/about'>About Us</NavLink>
+                            </Nav>
+                        </Navbar.Collapse>
                     </Container>
                 </Navbar>
             </div>

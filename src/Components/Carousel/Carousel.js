@@ -50,34 +50,89 @@ const CarouselSlider = () => {
     };
 
     return (
-        <div className='my-4'>
+        <div className='my-4 carousel'>
             <Slider {...settings}>
-                <div className='carousel-img'>
-                    <img src={pic1} alt="" />
+                <div className='category-wrap'>
+                    <div className="carousel-img">
+                        <a href="/">
+                            <img src={pic1} alt="" className='img-fluid' />
+                            <div className="box-content " >
+                                <h5>The Gussi</h5>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div className='carousel-img'>
-                    <img src={pic2} alt="" />
+                <div className='category-wrap'>
+                    <div className="carousel-img" >
+                        <a href="/">
+                            <img src={pic2} alt="" className='img-fluid' />
+                            <div className="box-content">
+                                <h5>Chanel</h5>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div className='carousel-img'>
-                    <img src={pic3} alt="" />
+                <div className='category-wrap'>
+                    <div className="carousel-img">
+                        <a href="/">
+                            <img src={pic3} alt="" className='img-fluid' />
+                            <div className="box-content">
+                                <h5>Mqueen</h5>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div className='carousel-img'>
-                    <img src={pic4} alt="" />
-                </div >
-                <div className='carousel-img'>
-                    <img src={pic5} alt="" />
+                <div className='category-wrap'>
+                    <div className="carousel-img">
+                        <a href="/">
+                            <img src={pic4} alt="" className='img-fluid' />
+                            <div className="box-content">
+                                <h5>Parada</h5>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div className='carousel-img'>
-                    <img src={pic6} alt="" />
+                <div className='category-wrap'>
+                    <div className="carousel-img">
+                        <a href="/">
+                            <img src={pic5} alt="" className='img-fluid' />
+                            <div className="box-content">
+                                <h5>Fearless</h5>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div className='carousel-img'>
-                    <img src={pic7} alt="" />
+                <div className='category-wrap'>
+                    <div className="carousel-img">
+                        <a href="/">
+                            <img src={pic6} alt="" className='img-fluid' />
+                            <div className="box-content">
+                                <h5>The Roja</h5>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div className='carousel-img'>
-                    <img src={pic8} alt="" />
+                <div className='category-wrap'>
+                    <div className="carousel-img">
+                        <a href="/">
+                            <img src={pic7} alt="" className='img-fluid' />
+                            <div className="box-content">
+                                <h5>Tom & Marle</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div className='category-wrap'>
+                    <div className="carousel-img">
+                        <a href="/">
+                            <img src={pic8} alt="" className='img-fluid' />
+                            <div className="box-content">
+                                <h5>Men osn</h5>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </Slider>
-
         </div>
     );
 };

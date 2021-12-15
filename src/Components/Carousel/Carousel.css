@@ -1,13 +1,26 @@
-.carousel-img img{
-    height: 200px;
-    width: 300px;
-    margin: auto;
-    border-radius: 5px;
-}
-.carousel-img img:hover{
-    transform: scale(1.05);
-    transition: transform 1s ease-in-out ;
+.carousel{
     overflow: hidden;
 }
-
+.carousel-img a{
+    color: white;
+}
+.carousel-img a img{
+    border-radius: 5px;
+    margin: auto;
+    height: 170px;
+    width: 250px;
+}
+*{
+    box-sizing: border-box;
+}
+.category-wrap{
+    position: relative;
+}
+.category-wrap .box-content{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
