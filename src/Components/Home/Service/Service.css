@@ -6,6 +6,19 @@
     padding: 50px;
 }
 .service-section{
-    border: 1px solid rgb(136, 134, 134);
+    border: 1px solid rgb(53, 53, 53);
     padding: 10px;
+    background-color: rgb(12,12,12);
+}
+.service-section img{
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+.service-section:hover{
+    background-image: linear-gradient(to bottom, rgb(56, 56, 56), rgb(28, 28, 28));
+}
+.service-section:hover img{
+    cursor: pointer;
+    transform: rotate(-600deg);
 }

@@ -1,10 +1,10 @@
 .product-card{
 
-    border: 1px solid rgb(123, 120, 120);
+    border: 1px solid rgb(58, 57, 57) !important;
     min-height: 300px;   
 }
 .card-body{
-    border:  1px solid rgb(123, 120, 120);
+    border-top:  1px solid rgb(53, 53, 53);
     text-align: right;
     background-color: black ;
     color: white;

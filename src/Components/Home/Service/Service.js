@@ -12,36 +12,36 @@ const Service = () => {
     return (
         <div className='service-banner my-4'>
             <div className="row">
-                <div className="col-md-6">
-                    <img src={serviceBanner1} alt="" />
-                </div>
-                <div className="col-md-6">
+                <div className="col-md-6 col-12">
                     <img src={serviceBanner2} alt="" />
+                </div>
+                <div className="col-md-6 col-12">
+                    <img src={serviceBanner1} alt="" />
                 </div>
             </div>
             <div className="row my-5">
-                <div className="col-md-3">
+                <div className="col-md-3 col-12">
                     <div className="service-section">
                         <img src={serviceLogo1} alt="" />
                         <h5>Contact With Us</h5>
                         <p>1248 12548 124</p>
                     </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 col-12">
                     <div className="service-section">
                         <img src={serviceLogo2} alt="" />
                         <h5>Contact With Us</h5>
                         <p>Help All Aspects</p>
                     </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 col-12">
                     <div className="service-section">
                         <img src={serviceLogo3} alt="" />
                         <h5>Contact With Us</h5>
                         <p>Life Time Support </p>
                     </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 col-12">
                     <div className="service-section">
                         <img src={serviceLogo4} alt="" />
                         <h5>Contact With Us</h5>
