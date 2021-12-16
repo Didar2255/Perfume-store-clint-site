@@ -3,15 +3,39 @@ import { useForm } from "react-hook-form";
 import './AddProduct.css'
 
 const AddProduct = () => {
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+        fetch('http://localhost:5000/products', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result.insertedId) {
+                    alert('Product Successfully Inserted ')
+                    reset()
+                }
+            })
+    };
     return (
         <div>
+            <h2 className='my-4'>Add Products Here : </h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("firstName")} />
-                <input {...register("lastName")} />
-                <input type="number" {...register("age")} />
-                <input type="submit" />
+                <input {...register("productName")} placeholder='Product Name' />
+                <input {...register("productImage")} placeholder='Product Image' />
+                <textarea {...register("productDescription")} placeholder='Product description' />
+                <input  {...register("rating")} placeholder='Rating' />
+                <input type="number" {...register("price")} placeholder='Product Price' />
+                <select {...register("Color")}>
+                    <option value="red">red</option>
+                    <option value="blue">blue</option>
+                    <option value="pink">pink</option>
+                    <option value="block">black</option>
+                </select>
+                <input type="submit" className='submit-btn' />
             </form>
         </div>
     );
