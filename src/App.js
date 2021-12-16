@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from './Components/Home/Home';
-import Products from './Components/Products/Products';
+
+import Products from './Components/Products/Products/Products';
 import About from './Components/AboutUs/About';
 import DashBoard from './Components/Dashboard/DashBoard/DashBoard';
 import ContactUs from './Components/ContactUs/ContactUs';
@@ -12,6 +12,8 @@ import AddProduct from './Components/Dashboard/AddProduct/AddProduct';
 import ManageProduct from './Components/Dashboard/ManageProduct/ManageProduct';
 import MakeAdmin from './Components/Dashboard/MakeAdmin/MakeAdmin';
 import ManageOrder from './Components/Dashboard/ManageOrder/ManageOrder';
+import Home from './Components/Home/Home';
+
 
 function App() {
   return (

@@ -1,0 +1,11 @@
+.service-banner{
+    background: url('C:\Project\Final Project\perfume-store\perfume-store\src\image\channel.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    padding: 50px;
+}
+.service-section{
+    border: 1px solid rgb(136, 134, 134);
+    padding: 10px;
+}
