@@ -4,7 +4,7 @@ import Rating from 'react-rating'
 import './Product.css'
 
 const Product = ({ product }) => {
-    const { productName, productImage, rating, price, color } = product
+    const { productName, productImage, rating, price } = product
     return (
         <div>
             <Col>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import Rating from 'react-rating'
 import './ProductsCarousel.css'
+import { Container } from 'react-bootstrap';
 
 const ProductsCarousel = () => {
     const [productsCarousel, setProductsCarousel] = useState([])
@@ -48,26 +49,29 @@ const ProductsCarousel = () => {
 
     return (
         <div className='productCarousel-section'>
-            <Slider {...settings}>
-                {
-                    productsCarousel.map(product => <div>
+            <Container>
+                <h2 className='product-title'>Special Products</h2>
+                <Slider {...settings}>
+                    {
+                        productsCarousel.map(product => <div>
 
-                        <div className='productCarousel-card'>
-                            <img src={product.productImage} alt="" className='img-fluid' />
-                            <div className="product-name">
-                                <h6>{product.productName}</h6>
-                                <Rating
-                                    initialRating={product.rating}
-                                    emptySymbol="far fa-star rating-icon"
-                                    fullSymbol="fas fa-star rating-icon "
-                                    readonly
-                                >
-                                </Rating>
+                            <div className='productCarousel-card'>
+                                <img src={product.productImage} alt="" className='img-fluid' />
+                                <div className="product-name">
+                                    <h6>{product.productName}</h6>
+                                    <Rating
+                                        initialRating={product.rating}
+                                        emptySymbol="far fa-star rating-icon"
+                                        fullSymbol="fas fa-star rating-icon "
+                                        readonly
+                                    >
+                                    </Rating>
+                                </div>
                             </div>
-                        </div>
-                    </div>)
-                }
-            </Slider>
+                        </div>)
+                    }
+                </Slider>
+            </Container>
         </div >
     );
 };

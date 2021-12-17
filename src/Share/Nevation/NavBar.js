@@ -29,6 +29,7 @@ const NavBar = () => {
                                 <NavLink to='/dashboard'>Dashboard</NavLink>
                                 <NavLink to='/contact'>Contact Us</NavLink>
                                 <NavLink to='/about'>About Us</NavLink>
+                                <NavLink to='/login'>Login</NavLink>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
