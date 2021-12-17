@@ -1,0 +1,10 @@
+.post-section{
+    margin-bottom: 20px;
+}
+.post-section:hover{
+    cursor: pointer;
+}
+.post-img{
+    width: 60%;
+    margin-left: 15px;
+}
