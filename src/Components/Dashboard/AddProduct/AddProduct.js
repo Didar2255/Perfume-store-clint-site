@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { Container } from 'react-bootstrap';
 import './AddProduct.css'
 
 const AddProduct = () => {
@@ -21,8 +22,8 @@ const AddProduct = () => {
             })
     };
     return (
-        <div>
-            <h2 className='my-4'>Add Products Here : </h2>
+        <Container>
+            <h2 className='my-4 product-title'>Add Products Here : </h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("productName")} placeholder='Product Name' />
                 <input {...register("productImage")} placeholder='Product Image' />
@@ -37,7 +38,7 @@ const AddProduct = () => {
                 </select>
                 <input type="submit" className='submit-btn' />
             </form>
-        </div>
+        </Container>
     );
 };
 
