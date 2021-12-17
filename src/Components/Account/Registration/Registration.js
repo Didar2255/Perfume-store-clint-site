@@ -2,35 +2,33 @@ import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
-import './Login.css'
+import './Registration.css'
 
-const Login = () => {
-    const [login, setLogin] = useState({})
+const Registration = () => {
 
-
-    const { handelLogin, googleSignIn } = useAuth()
-
+    const [register, setRegister] = useState({})
+    const { handelCreteAccount } = useAuth()
 
     const handelOnchange = (e) => {
-        const filed = e.target.name;
+        const field = e.target.name;
         const value = e.target.value;
-        const loginData = { ...login }
-        loginData[filed] = value;
-        setLogin(loginData);
+        const registerData = { ...register }
+        registerData[field] = value;
+        setRegister(registerData)
     }
 
     const handelFormControl = (e) => {
-        handelLogin(login.email, login.password)
+        handelCreteAccount(register.email, register.password, register.name)
         e.preventDefault()
     }
     return (
-        <Container>
+        <Container >
             <div className='row my-5'>
                 <div className="col-md-5">
                     <div className="terms-section">
-                        <h4 className='my-4'>Do not have an account ?</h4>
-                        <Link to='/registration'>
-                            <button>Create Account</button>
+                        <h4 className='my-4'>Already have an account ?</h4>
+                        <Link to='/login'>
+                            <button>Log In</button>
                         </Link>
                         <p>Terms & Conditions *</p>
                         <p>Your privacy and security are important to us. For more <br /> information on how we use your data read our</p>
@@ -38,28 +36,32 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="col-md-7">
-                    <div className="login">
+                    <div className="registration">
                         <h5>Login</h5>
-                        <p>Please login below account detail !</p>
-                        <div className="login-form">
+                        <p>Please register below account detail</p>
+                        <div className="registration-form">
                             <form onSubmit={handelFormControl}>
+                                <input
+                                    type="text"
+                                    name='name'
+                                    onBlur={handelOnchange}
+                                    placeholder='User Name *'
+                                />
                                 <input
                                     type="email"
                                     name='email'
-                                    placeholder='Email'
                                     onBlur={handelOnchange}
+                                    placeholder='User Email *'
                                 />
                                 <input
                                     type="password"
                                     name='password'
-                                    placeholder='Password'
                                     onBlur={handelOnchange}
+                                    placeholder='User Password *'
                                 />
-                                <button type='submit'>Sign In</button>
+                                <input type="submit" value='Create' className='submit-int' />
                             </form>
                         </div>
-                        <p>Forget account?</p>
-                        <i class="fab fa-google sign-icon" onClick={googleSignIn}></i>
                     </div>
 
                 </div>
@@ -68,4 +70,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Registration;

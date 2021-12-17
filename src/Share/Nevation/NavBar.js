@@ -4,8 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../../image/Logo.png'
 import './NavBar.css'
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import useAuth from '../../Hooks/useAuth';
 
 const NavBar = () => {
+
+    const { user, handelLogOut } = useAuth()
     return (
         <div className='header-section'>
             <div>
@@ -29,7 +32,10 @@ const NavBar = () => {
                                 <NavLink to='/dashboard'>Dashboard</NavLink>
                                 <NavLink to='/contact'>Contact Us</NavLink>
                                 <NavLink to='/about'>About Us</NavLink>
-                                <NavLink to='/login'>Login</NavLink>
+                                {user.email && <span className='display-name'>{user.displayName}</span>}
+                                {!user.email ? <NavLink to='/login'>Login</NavLink> :
+                                    <button onClick={handelLogOut} className=' btn btn-danger'>Logout</button>
+                                }
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

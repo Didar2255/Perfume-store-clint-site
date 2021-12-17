@@ -1,23 +1,26 @@
-.login{
-    border: 1px solid rgb(65, 64, 64);
-    padding: 50px 0px 50px 0px;
-    background-color: black;
-
+.register-page{
+    overflow: hidden;
 }
-.login form input{
+.registration{
+    border: 1px solid rgb(65, 64, 64);
+    padding: 40px 0px 40px 0px;
+    background-color: black;
+}
+.registration form input{
     border-radius: 0;
     margin: 20px;
     border: 1px solid rgb(65, 64, 64);
 }
-.login form button{
+.registration form .submit-int{
    width: 60%; 
    padding: 5px;
    background-image: linear-gradient(to top, rgba(5, 5, 5, 0.926), rgb(65, 65, 65));
    color: white;
    font-weight: 500;
    border: 1px solid rgb(65, 64, 64);
+   text-align: center;
 }
-.login form button:hover{
+.registration form .submit-int:hover{
     background-image: linear-gradient(to top, rgb(65, 65, 65),rgba(5, 5, 5, 0.926) );  
 }
 
@@ -38,11 +41,4 @@
 .terms-section button:hover{
     color: white;
     transition: color 0.4s ease-in-out;
-}
-.sign-icon{
-    font-size: 28px;
-    color: cyan;
-}
-.sign-icon:hover{
-    cursor: pointer;
 }

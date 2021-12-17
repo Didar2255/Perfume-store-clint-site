@@ -1,6 +1,5 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import Products from './Components/Products/Products/Products';
 import About from './Components/AboutUs/About';
 import DashBoard from './Components/Dashboard/DashBoard/DashBoard';
@@ -15,31 +14,36 @@ import ManageOrder from './Components/Dashboard/ManageOrder/ManageOrder';
 import Home from './Components/Home/Home';
 import Login from './Components/Account/LogIn/Login';
 import NavBar from './Share/Nevation/NavBar';
+import Registration from './Components/Account/Registration/Registration';
+import AuthProvider from './Context/AuthProvider/AuthProvider';
 
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <NavBar></NavBar>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/blog' element={<Blogs />} />
-          <Route path='/products' element={<Products />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/dashboard' element={<DashBoard />}>
-            <Route path='myOrder' element={<MyOrder />} />
-            <Route path='payment' element={<Payment />} />
-            <Route path='addProducts' element={<AddProduct />} />
-            <Route path='manageProducts' element={<ManageProduct />} />
-            <Route path='manageOrder' element={<ManageOrder />} />
-            <Route path='makeAdmin' element={<MakeAdmin />} />
-          </Route>
-          <Route path='/contact' element={<ContactUs />} />
-          <Route path='/login' element={<Login />} />
-        </Routes>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <NavBar></NavBar>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/blog' element={<Blogs />} />
+            <Route path='/products' element={<Products />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/dashboard' element={<DashBoard />}>
+              <Route path='myOrder' element={<MyOrder />} />
+              <Route path='payment' element={<Payment />} />
+              <Route path='addProducts' element={<AddProduct />} />
+              <Route path='manageProducts' element={<ManageProduct />} />
+              <Route path='manageOrder' element={<ManageOrder />} />
+              <Route path='makeAdmin' element={<MakeAdmin />} />
+            </Route>
+            <Route path='/contact' element={<ContactUs />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/registration' element={<Registration />} />
+          </Routes>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
