@@ -30,13 +30,14 @@
     content: "";
     width: 95%;
     height: 47%;
-    background-color: #807f7f4d;
+    background-color: #c97575a1;
     position: absolute;
     left: 0;
     right: 0;
     margin: auto;
     transition: all 0.5s;
     opacity: 0;
+    cursor: pointer;
 }
 .box .box-content::before{
     top: -20px;

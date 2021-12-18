@@ -7,7 +7,12 @@ const SingleBlog = ({ blog }) => {
     return (
         <Col>
             <Card className='blog-card'>
-                <Card.Img variant="top" src={img} />
+                <div className="box">
+                    <img src={img} alt="" className='img-fluid' />
+                    <div className="box-content">
+
+                    </div>
+                </div>
                 <Card.Body className='blog-body'>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
