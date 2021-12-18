@@ -18,7 +18,7 @@ const Registration = () => {
     }
 
     const handelFormControl = (e) => {
-        handelCreteAccount(register.email, register.password, register.name)
+        handelCreteAccount(register.email, register.password, register.name,)
         e.preventDefault()
     }
     return (

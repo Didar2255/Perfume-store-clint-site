@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
     const [login, setLogin] = useState({})
-
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const { handelLogin, googleSignIn } = useAuth()
 
@@ -20,8 +21,11 @@ const Login = () => {
     }
 
     const handelFormControl = (e) => {
-        handelLogin(login.email, login.password)
+        handelLogin(login.email, login.password, location, navigate)
         e.preventDefault()
+    }
+    const handelGoogleSingIn = () => {
+        googleSignIn(location, navigate)
     }
     return (
         <Container>
@@ -59,7 +63,7 @@ const Login = () => {
                             </form>
                         </div>
                         <p>Forget account?</p>
-                        <i class="fab fa-google sign-icon" onClick={googleSignIn}></i>
+                        <i class="fab fa-google sign-icon" onClick={handelGoogleSingIn}></i>
                     </div>
 
                 </div>

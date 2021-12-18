@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import img from '../../image/about-intro.jpg'
 import mission from '../../image/mission.png'
 import vision from '../../image/vission.png'
+import Contact from '../../Share/Contact/Contact';
 import './AboutUs.css'
 import OurTeam from './OurTeam/OurTeam';
 
@@ -52,6 +53,7 @@ const About = () => {
                     </Link>
                 </div>
                 <OurTeam></OurTeam>
+                <Contact></Contact>
             </Container>
         </div>
     );

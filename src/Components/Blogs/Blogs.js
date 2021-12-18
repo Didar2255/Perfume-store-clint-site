@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
+import Contact from '../../Share/Contact/Contact';
 import RecentPost from './RecentPost/RecentPost';
 import SingleBlog from './SingleBlog/SingleBlog';
 
@@ -28,6 +29,7 @@ const Blogs = () => {
                 <div className="col-md-3">
                     <RecentPost></RecentPost>
                 </div>
+                <Contact></Contact>
             </div>
         </Container>
     );

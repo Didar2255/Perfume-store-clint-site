@@ -34,10 +34,12 @@ const useFirebase = () => {
                 setIsLoading(false)
             })
     }
-    const handelLogin = (email, password) => {
+    const handelLogin = (email, password, location, navigate) => {
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
+                const destination = location.state.form || '/home'
+                navigate(destination)
                 setUser(result.user)
             })
             .catch(error => {
@@ -62,10 +64,12 @@ const useFirebase = () => {
     }, [auth]);
 
 
-    const googleSignIn = () => {
+    const googleSignIn = (location, navigate) => {
         setIsLoading(true)
         signInWithPopup(auth, provider)
             .then(result => {
+                const destination = location.state.form || '/home'
+                navigate(destination)
                 setUser(result.user)
             })
             .catch(error => {

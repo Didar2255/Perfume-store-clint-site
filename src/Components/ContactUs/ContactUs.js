@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import emailjs from 'emailjs-com';
 import './ContactUs.css'
+import Contact from '../../Share/Contact/Contact';
 
 const ContactUs = () => {
     const SendEmail = (e) => {
@@ -44,6 +45,7 @@ const ContactUs = () => {
                         </form>
                     </div>
                 </div>
+                <Contact></Contact>
             </div>
         </Container>
     );

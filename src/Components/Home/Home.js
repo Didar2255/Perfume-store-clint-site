@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../../Share/Banner/Banner';
+import Contact from '../../Share/Contact/Contact';
 import CarouselSlider from '../Carousel/Carousel';
 import Perfume from '../HomeOther/PerfumeAdd/Perfume';
 import ProductsCarousel from '../HomeOther/ProductCarousel/ProductsCarousel';
@@ -15,6 +16,7 @@ const Home = () => {
             <Service></Service>
             <ProductsCarousel></ProductsCarousel>
             <Perfume></Perfume>
+            <Contact></Contact>
         </div>
     );
 };

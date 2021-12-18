@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import Contact from '../../../Share/Contact/Contact';
 import Product from '../Product/Product';
 import './Products.css'
 
@@ -22,6 +23,7 @@ const Products = () => {
                         />)
                     }
                 </Row>
+                <Contact></Contact>
             </Container>
         </div>
     );
