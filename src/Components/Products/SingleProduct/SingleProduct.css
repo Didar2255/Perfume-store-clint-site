@@ -11,6 +11,8 @@
 }
 .purchase-form form input,select{
     width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
 }
 .purchase-form form select{
     margin-top: 10px;

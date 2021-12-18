@@ -19,6 +19,7 @@ import AuthProvider from './Context/AuthProvider/AuthProvider';
 import SingleProduct from './Components/Products/SingleProduct/SingleProduct';
 import Footer from './Share/Footer/Footer';
 import PrivetRoute from './Components/PrivetRoute/PrivetRoute';
+import Pay from './Components/Dashboard/Payment/Pay/Pay';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
             <Route path='/dashboard' element={<DashBoard />}>
               <Route path='myOrder' element={<MyOrder />} />
               <Route path='payment' element={<Payment />} />
+              <Route path='/dashboard/payment/:id' element={<Pay />} />
               <Route path='addProducts' element={<AddProduct />} />
               <Route path='manageProducts' element={<ManageProduct />} />
               <Route path='manageOrder' element={<ManageOrder />} />
