@@ -6,7 +6,7 @@
     margin-left: 20px;
 }
 .purchase-form form{
-    border: 1px solid gray;
+    border: 1px solid rgb(53, 53, 53);
     padding: 20px;
 }
 .purchase-form form input,select{
@@ -27,4 +27,11 @@
  }
  .purchase-form form button:hover{
      background-image: linear-gradient(to top, rgb(65, 65, 65),rgba(5, 5, 5, 0.926) );  
+ }
+ .product-specification{
+     border: 1px solid rgb(53, 53, 53);
+     text-align:left;
+     padding: 20px;
+     margin-bottom: 20px;
+     background-color: black;
  }
