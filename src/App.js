@@ -16,6 +16,7 @@ import Login from './Components/Account/LogIn/Login';
 import NavBar from './Share/Nevation/NavBar';
 import Registration from './Components/Account/Registration/Registration';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
+import SingleProduct from './Components/Products/SingleProduct/SingleProduct';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path='/home' element={<Home />} />
             <Route path='/blog' element={<Blogs />} />
             <Route path='/products' element={<Products />} />
+            <Route path='/product/:id' element={<SingleProduct />} />
             <Route path='/about' element={<About />} />
             <Route path='/dashboard' element={<DashBoard />}>
               <Route path='myOrder' element={<MyOrder />} />
