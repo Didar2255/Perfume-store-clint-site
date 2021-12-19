@@ -7,13 +7,13 @@ const ManageOrder = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/order')
+        fetch('https://radiant-shore-26920.herokuapp.com/order')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, []);
 
     const handelDeleteOrder = (id) => {
-        fetch(`http://localhost:5000/deleteOrder/${id}`, {
+        fetch(`https://radiant-shore-26920.herokuapp.com/deleteOrder/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

@@ -16,7 +16,7 @@ const CheckOutForm = ({ order }) => {
     const [clientSecret, setClientSecret] = useState('')
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://radiant-shore-26920.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -77,7 +77,7 @@ const CheckOutForm = ({ order }) => {
                 last: paymentIntent?.card?.last4,
                 transaction: paymentIntent.client_secret.slice('_secret')[0],
             }
-            const url = `http://localhost:5000/products/${_id}`
+            const url = `https://radiant-shore-26920.herokuapp.com/products/${_id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {

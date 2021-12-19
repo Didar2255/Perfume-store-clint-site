@@ -6,12 +6,12 @@ const ManageProduct = () => {
     const [products, setProducts] = useState([])
     const [isDelete, setIsDelete] = useState(null)
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://radiant-shore-26920.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [isDelete]);
     const handelDeleteProduct = (id) => {
-        fetch(`http://localhost:5000/deleteProduct/${id}`, {
+        fetch(`https://radiant-shore-26920.herokuapp.com/deleteProduct/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

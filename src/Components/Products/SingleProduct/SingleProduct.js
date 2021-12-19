@@ -12,14 +12,14 @@ const SingleProduct = () => {
 
     const [productDetails, setProductsDetails] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://radiant-shore-26920.herokuapp.com/products/${id}`)
             .then(res => res.json())
             .then(data => setProductsDetails(data))
     }, [id]);
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/orders', {
+        fetch('https://radiant-shore-26920.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

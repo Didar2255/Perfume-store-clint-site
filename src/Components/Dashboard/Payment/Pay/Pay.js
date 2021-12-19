@@ -12,7 +12,7 @@ const Pay = () => {
     const { user } = useAuth()
     const [order, setOrder] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/order/${id}`)
+        fetch(`https://radiant-shore-26920.herokuapp.com/order/${id}`)
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [id])

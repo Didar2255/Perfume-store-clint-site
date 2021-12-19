@@ -7,7 +7,7 @@ import { Container } from 'react-bootstrap';
 const ProductsCarousel = () => {
     const [productsCarousel, setProductsCarousel] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://radiant-shore-26920.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProductsCarousel(data))
     }, []);
