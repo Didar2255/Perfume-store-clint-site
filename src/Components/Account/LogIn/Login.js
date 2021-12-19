@@ -63,7 +63,7 @@ const Login = () => {
                             </form>
                         </div>
                         <p>Forget account?</p>
-                        <i class="fab fa-google sign-icon" onClick={handelGoogleSingIn}></i>
+                        <button className='google-button' onClick={handelGoogleSingIn}><i class="fab fa-google sign-icon" ></i> Google Sign In</button>
                     </div>
 
                 </div>

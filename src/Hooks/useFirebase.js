@@ -8,32 +8,31 @@ const useFirebase = () => {
     const [user, setUser] = useState({})
     const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(true)
+    const [admin, setAdmin] = useState(false)
 
     const auth = getAuth()
     const provider = new GoogleAuthProvider();
 
-    const handelCreteAccount = (email, password, name) => {
-        setIsLoading(true)
+    const registerUser = (email, password, name) => {
         createUserWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                setUser(result.user)
+            .then((userCredential) => {
+                setError('')
+                const newUser = { email, displayName: name }
+                setUser(newUser)
+                // save user to data base
+                saveUser(email, name, 'POST')
                 updateProfile(auth.currentUser, {
                     displayName: name
-                })
-                    .then(() => {
-
-                    })
-                    .catch(error => {
-                        setError(error.message)
-                    })
+                }).then(() => {
+                }).catch((error) => {
+                });
             })
-            .catch(error => {
+            .catch((error) => {
                 setError(error.message)
-            })
-            .finally(() => {
-                setIsLoading(false)
-            })
+            });
     }
+
+
     const handelLogin = (email, password, location, navigate) => {
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
@@ -63,14 +62,21 @@ const useFirebase = () => {
         return unsubscribe;
     }, [auth]);
 
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
 
     const googleSignIn = (location, navigate) => {
         setIsLoading(true)
         signInWithPopup(auth, provider)
             .then(result => {
-                const destination = location.state.form || '/home'
+                const user = result.user;
+                saveUser(user.email, user.displayName, 'PUT')
+                setError('')
+                const destination = location?.state?.form || '/home'
                 navigate(destination)
-                setUser(result.user)
             })
             .catch(error => {
                 setError(error)
@@ -92,9 +98,22 @@ const useFirebase = () => {
             .finally(() => {
                 setIsLoading(false)
             })
+
     }
 
-    return { user, error, handelCreteAccount, handelLogin, handelLogOut, googleSignIn, isLoading }
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName }
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+    }
+    return { user, error, registerUser, handelLogin, handelLogOut, googleSignIn, isLoading, admin }
 
 }
 

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 import logo from '../../../image/Logo.png'
 import './DashBoard.css'
 
 const DashBoard = () => {
+    const { admin } = useAuth()
     return (
         <div className='dashboard-container'>
             <div className="row">
@@ -22,18 +24,19 @@ const DashBoard = () => {
                             <Link to='/dashboard/payment'>
                                 <li className='dashboard-menu'> <i class="fab fa-amazon-pay icon"></i> Payment</li>
                             </Link>
-                            <Link to='/dashboard/manageOrder'>
-                                <li className='dashboard-menu'> <i class="fas fa-tasks icon"></i> Manage Order</li>
-                            </Link>
-                            <Link to='/dashboard/addProducts'>
-                                <li className='dashboard-menu'> <i class="fas fa-plus icon"></i> Add Products</li>
-                            </Link>
-                            <Link to='/dashboard/manageProducts'>
-                                <li className='dashboard-menu'> <i class="fas fa-th-large icon"></i> Manage product</li>
-                            </Link>
-                            <Link to='/dashboard/makeAdmin' >
-                                <li className='dashboard-menu'> <i class="fas fa-user-plus icon"></i> Make Admin</li>
-                            </Link>
+                            {admin && <div>
+                                <Link to='/dashboard/manageOrder'>
+                                    <li className='dashboard-menu'> <i class="fas fa-tasks icon"></i> Manage Order</li>
+                                </Link>
+                                <Link to='/dashboard/addProducts'>
+                                    <li className='dashboard-menu'> <i class="fas fa-plus icon"></i> Add Products</li>
+                                </Link>
+                                <Link to='/dashboard/manageProducts'>
+                                    <li className='dashboard-menu'> <i class="fas fa-th-large icon"></i> Manage product</li>
+                                </Link>
+                                <Link to='/dashboard/makeAdmin' >
+                                    <li className='dashboard-menu'> <i class="fas fa-user-plus icon"></i> Make Admin</li>
+                                </Link></div>}
                         </div>
                     </div>
                 </div>

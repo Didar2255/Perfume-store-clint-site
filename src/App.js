@@ -20,6 +20,7 @@ import SingleProduct from './Components/Products/SingleProduct/SingleProduct';
 import Footer from './Share/Footer/Footer';
 import PrivetRoute from './Components/PrivetRoute/PrivetRoute';
 import Pay from './Components/Dashboard/Payment/Pay/Pay';
+import AdminRoute from './Components/PrivetRoute/AdminRoute/AdminRoute';
 
 
 function App() {
@@ -40,11 +41,15 @@ function App() {
             <Route path='/dashboard' element={<DashBoard />}>
               <Route path='myOrder' element={<MyOrder />} />
               <Route path='payment' element={<Payment />} />
-              <Route path='/dashboard/payment/:id' element={<Pay />} />
+              <Route path='/dashboard/payment/:id' element={<PrivetRoute>
+                <Pay />
+              </PrivetRoute>} />
               <Route path='addProducts' element={<AddProduct />} />
               <Route path='manageProducts' element={<ManageProduct />} />
               <Route path='manageOrder' element={<ManageOrder />} />
-              <Route path='makeAdmin' element={<MakeAdmin />} />
+              <Route path='makeAdmin' element={<AdminRoute>
+                <MakeAdmin />
+              </AdminRoute>} />
             </Route>
             <Route path='/contact' element={<ContactUs />} />
             <Route path='/login' element={<Login />} />

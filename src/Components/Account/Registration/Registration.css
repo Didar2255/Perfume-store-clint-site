@@ -3,12 +3,18 @@
 }
 .registration{
     border: 1px solid rgb(65, 64, 64);
-    padding: 40px 0px 40px 0px;
+    padding: 50px 0px 50px 0px;
     background-color: black;
 }
+.registration form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .registration form input{
-    border-radius: 0;
-    margin: 20px;
+    width: 60%;
+    padding: 10px;
+    margin: 15px;
     border: 1px solid rgb(65, 64, 64);
 }
 .registration form .submit-int{

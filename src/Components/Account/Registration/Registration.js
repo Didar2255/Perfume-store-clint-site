@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Alert, Container, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import './Registration.css'
 
 const Registration = () => {
-
     const [register, setRegister] = useState({})
-    const { handelCreteAccount } = useAuth()
+    const { registerUser, isLoading, user } = useAuth()
 
     const handelOnchange = (e) => {
         const field = e.target.name;
@@ -16,9 +15,8 @@ const Registration = () => {
         registerData[field] = value;
         setRegister(registerData)
     }
-
     const handelFormControl = (e) => {
-        handelCreteAccount(register.email, register.password, register.name,)
+        registerUser(register.email, register.password, register.name)
         e.preventDefault()
     }
     return (
@@ -37,10 +35,10 @@ const Registration = () => {
                 </div>
                 <div className="col-md-7">
                     <div className="registration">
-                        <h5>Login</h5>
+                        <h5>Register</h5>
                         <p>Please register below account detail</p>
                         <div className="registration-form">
-                            <form onSubmit={handelFormControl}>
+                            {!isLoading && <form onSubmit={handelFormControl}>
                                 <input
                                     type="text"
                                     name='name'
@@ -60,7 +58,11 @@ const Registration = () => {
                                     placeholder='User Password *'
                                 />
                                 <input type="submit" value='Create' className='submit-int' />
-                            </form>
+                            </form>}
+                            {isLoading && <Spinner animation="border" variant="warning" />}
+                            {user?.email && <Alert >
+                                User Successfully create
+                            </Alert>}
                         </div>
                     </div>
 
