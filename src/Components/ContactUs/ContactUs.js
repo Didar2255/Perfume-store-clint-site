@@ -25,11 +25,11 @@ const ContactUs = () => {
                     <div className="contact-detail">
                         <h4>Get In Touch</h4>
                         <p></p>
-                        <h6> <i class="fas fa-map-marker-alt contact-icon"></i> Address : </h6>
+                        <h6> <i className="fas fa-map-marker-alt contact-icon"></i> Address : </h6>
                         <p>Adabor,Dhaka,Bangladesh</p>
-                        <h6> <i class="fas fa-phone-volume contact-icon"></i> Phone : </h6>
+                        <h6> <i className="fas fa-phone-volume contact-icon"></i> Phone : </h6>
                         <p>+0881234561256</p>
-                        <h6> <i class="fas fa-envelope contact-icon"></i> Email :</h6>
+                        <h6> <i className="fas fa-envelope contact-icon"></i> Email :</h6>
                         <p>perfume123@gmail.com</p>
                     </div>
                 </div>

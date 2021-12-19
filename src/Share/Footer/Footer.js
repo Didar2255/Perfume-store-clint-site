@@ -24,9 +24,9 @@ const Footer = () => {
                 <div className="row">
                     <div className="col-md-4 footer-content">
                         <h4 className='ms-4 my-3'>Contact Us</h4>
-                        <p> <i class="fas fa-map-marker-alt icon"></i> Address : Banani,Model Town,Dhaka</p>
-                        <p> <i class="fas fa-phone-alt icon"></i> Phone : +0881236459</p>
-                        <p> <i class="far fa-envelope-open icon"></i> email: diderbokth2255@gmail.com</p>
+                        <p> <i className="fas fa-map-marker-alt icon"></i> Address : Banani,Model Town,Dhaka</p>
+                        <p> <i className="fas fa-phone-alt icon"></i> Phone : +0881236459</p>
+                        <p> <i className="far fa-envelope-open icon"></i> email: diderbokth2255@gmail.com</p>
                     </div>
                     <div className="col-md-2 footer-content">
                         <h4 className='ms-4'>My Account</h4>

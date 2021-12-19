@@ -17,9 +17,9 @@ const Product = ({ product }) => {
                             <div className="box-content">
                                 <div className="content">
                                     <ul className='details-icon'>
-                                        <li title='QuickView'><i class="far fa-eye"></i></li>
-                                        <li title='Wishlist'><i class="far fa-heart"></i></li>
-                                        <li title='Add to Cart'><i class="fas fa-cart-arrow-down"></i></li>
+                                        <li title='QuickView'><i className="far fa-eye"></i></li>
+                                        <li title='Wishlist'><i className="far fa-heart"></i></li>
+                                        <li title='Add to Cart'><i className="fas fa-cart-arrow-down"></i></li>
                                     </ul>
                                 </div>
                             </div>
