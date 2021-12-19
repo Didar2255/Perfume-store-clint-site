@@ -7,10 +7,11 @@ const ManageOrder = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('http://localhost:5000/order')
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => setOrders(data))
     }, []);
+
     const handelDeleteOrder = (id) => {
         fetch(`http://localhost:5000/deleteOrder/${id}`, {
             method: 'DELETE'
